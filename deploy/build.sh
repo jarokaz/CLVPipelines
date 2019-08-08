@@ -4,7 +4,7 @@
 # the pipelines and pipelines components 
 
 SUBSTITUTIONS=\
-_CLV_REPO=[CLV_REPO_NAME],\
+_CLV_REPO=jarokaz/CLVPipelines,\
 _AUTOML_TABLES_IMAGE=automl_tables,\
 _BASE_IMAGE=base_image,\
 _TAG=latest,\
