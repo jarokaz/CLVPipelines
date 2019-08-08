@@ -54,8 +54,8 @@ steps:
   args:
   - '-c'
   - |
-    gsutil cp *.tar.gz gs://$_BUCKET_NAME/$_PIPELINES_FOLDER/$TAG_NAME
-    gsutil cp artifacts/query_template.sql.jinja gs://$_BUCKET_NAME/$_ARTIFACTS_FOLDER/$TAG_NAME/query_template.sql.jinja 
+    gsutil cp *.tar.gz gs://$_BUCKET_NAME/$TAG_NAME/$_PIPELINES_FOLDER
+    gsutil cp artifacts/query_template.sql.jinja gs://$_BUCKET_NAME/$TAG_NAME/$_ARTIFACTS_FOLDER/query_template.sql.jinja 
     gsutil cp gs://clv-datasets/transactions/* gs://$_BUCKET_NAME/$TAG_NAME/$_SAMPLE_DATASET_FOLDER 
   dir: 'pipelines'
 
