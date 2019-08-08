@@ -23,7 +23,7 @@ steps:
   args: 
   - '-c'
   - |
-    SED_SCRIPT='s/\([[:blank:]]*image:[[:blank:]]*\).*/\1gcr\.io\/$PROJECT_ID\/$_AUTOML_TABLES_IMAGE:$_TAG/'
+    SED_SCRIPT='s/\([[:blank:]]*image:[[:blank:]]*\).*/\1gcr\.io\/$PROJECT_ID\/$_AUTOML_TABLES_IMAGE:$TAG_NAME/'
     ls */component.yaml | xargs sed -i $$SED_SCRIPT 
   dir: 'components/automl_tables/specs'
 
@@ -33,7 +33,7 @@ steps:
   args: 
   - '-c'
   - |
-    SED_SCRIPT='s/\([[:blank:]]*lightweight_components_base_image:[[:blank:]]*\).*/\1gcr\.io\/$PROJECT_ID\/$_BASE_IMAGE:$_TAG/'
+    SED_SCRIPT='s/\([[:blank:]]*lightweight_components_base_image:[[:blank:]]*\).*/\1gcr\.io\/$PROJECT_ID\/$_BASE_IMAGE:$TAG_NAME/'
     sed -i $$SED_SCRIPT settings.yaml
     SED_SCRIPT='s/\([[:blank:]]*query_template_uri:[[:blank:]]*\).*/\1gs:\/\/$_BUCKET_NAME\/$_ARTIFACTS_FOLDER\/query_template.sql.jinja/'
     sed -i $$SED_SCRIPT settings.yaml
