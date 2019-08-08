@@ -4,6 +4,7 @@
 # the pipelines and pipelines components 
 
 SUBSTITUTIONS=\
+_CLV_REPO=[CLV_REPO_NAME],\
 _AUTOML_TABLES_IMAGE=automl_tables,\
 _BASE_IMAGE=base_image,\
 _TAG=latest,\
@@ -16,7 +17,7 @@ _BUCKET_NAME=kfp-clv-artifacts,\
 _CLUSTER_NAME=kfp-clv-gke,\
 _ZONE=us-central1-a
 
-gcloud builds submit ../ --config cloudbuild.yaml --substitutions $SUBSTITUTIONS
+gcloud builds submit --no-source  --config cloudbuild.yaml --substitutions $SUBSTITUTIONS
 
 
 
