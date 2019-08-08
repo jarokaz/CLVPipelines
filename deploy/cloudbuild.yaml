@@ -10,6 +10,7 @@ steps:
   - '1'
   - --verbose
   - https://github.com/${_CLV_REPO}
+  - .
   
 # Build the image for custom build steps 
 - name: 'gcr.io/cloud-builders/docker'
