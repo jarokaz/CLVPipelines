@@ -9,12 +9,12 @@ steps:
 
 # Build the base image for lightweight components
 - name: 'gcr.io/cloud-builders/docker' 
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/$_BASE_IMAGE:$_TAG', '.'] 
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/$_BASE_IMAGE:$TAG_NAME', '.'] 
   dir: 'pipelines/helper_components'
 
 # Build the AutoML Tables components image
 - name:  'gcr.io/cloud-builders/docker' 
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/$_AUTOML_TABLES_IMAGE:$_TAG', '.'] 
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/$_AUTOML_TABLES_IMAGE:$TAG_NAME', '.'] 
   dir: 'components/automl_tables'
 
 # Update component specifications
@@ -44,8 +44,8 @@ steps:
   args:
   - '-c'
   - |
-    dsl-compile --py  train_pipeline.py --output ${_TRAIN_PIPELINE}.tar.gz --disable-type-check
-    dsl-compile --py  batch_predict_pipeline.py --output ${_PREDICT_PIPELINE}.tar.gz --disable-type-check
+    dsl-compile --py  train_pipeline.py --output ${_TRAIN_PIPELINE}.${TAG_NAME}.tar.gz --disable-type-check
+    dsl-compile --py  batch_predict_pipeline.py --output ${_PREDICT_PIPELINE}.${$TAG_NAME}.tar.gz --disable-type-check
   dir: 'pipelines'
 
 # Copy build artifacts to GCS bucket
@@ -54,9 +54,9 @@ steps:
   args:
   - '-c'
   - |
-    gsutil cp *.tar.gz gs://$_BUCKET_NAME/$_PIPELINES_FOLDER
-    gsutil cp artifacts/query_template.sql.jinja gs://$_BUCKET_NAME/$_ARTIFACTS_FOLDER/query_template.sql.jinja 
-    gsutil cp gs://clv-datasets/transactions/* gs://$_BUCKET_NAME/$_SAMPLE_DATASET_FOLDER 
+    gsutil cp *.tar.gz gs://$_BUCKET_NAME/$_PIPELINES_FOLDER/$TAG_NAME
+    gsutil cp artifacts/query_template.sql.jinja gs://$_BUCKET_NAME/$_ARTIFACTS_FOLDER/$TAG_NAME/query_template.sql.jinja 
+    gsutil cp gs://clv-datasets/transactions/* gs://$_BUCKET_NAME/$TAG_NAME/$_SAMPLE_DATASET_FOLDER 
   dir: 'pipelines'
 
 # Upload compiled pipelines to the KFP cluster
