@@ -45,7 +45,7 @@ steps:
   - '-c'
   - |
     dsl-compile --py  train_pipeline.py --output ${_TRAIN_PIPELINE}.${TAG_NAME}.tar.gz --disable-type-check
-    dsl-compile --py  batch_predict_pipeline.py --output ${_PREDICT_PIPELINE}.${$TAG_NAME}.tar.gz --disable-type-check
+    dsl-compile --py  batch_predict_pipeline.py --output ${_PREDICT_PIPELINE}.${TAG_NAME}.tar.gz --disable-type-check
   dir: 'pipelines'
 
 # Copy build artifacts to GCS bucket
