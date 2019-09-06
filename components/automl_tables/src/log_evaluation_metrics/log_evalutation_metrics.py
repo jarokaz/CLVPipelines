@@ -101,7 +101,10 @@ def regression_evaluation_metrics_to_markdown_metadata(metrics):
 
 
 def classification_evaluation_metrics_to_markdown_metadata(metrics):
-  """Converts classification evaluation metrics to KFP Viewer markdown metadata."""
+  """Converts classification evaluation metrics to KFP Viewer markdown metadata.
+  
+  NOT IMPLEMENTED
+  """
 
   markdown = 'TBD'
 
