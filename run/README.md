@@ -20,6 +20,8 @@ The compiled batch predict pipeline is in
 
 `gs://[_BUCKET_NAME][_PIPELINES_FOLDER]/[_PREDICT_PIPELINE].tar.gz`
 
+In addition both pipelines have been uploaded to Kubeflow Pipelines.
+
 The sample training and testing datasets can be found in:
 
 `gs://[_BUCKET_NAME][_SAMPLE_DATASET]`
