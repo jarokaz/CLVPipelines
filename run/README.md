@@ -84,6 +84,7 @@ The code in this tutorial was tested with the 0.1.27 version of KFP SDK.
 ```
 SDK_VERSION=0.1.27
 pip install https://storage.googleapis.com/ml-pipeline/release/$SDK_VERSION/kfp.tar.gz --upgrade
+```
 
 To use `kfp-cli.py` utility you also need [Python Fire package](https://google.github.io/python-fire/guide/). 
 ```
