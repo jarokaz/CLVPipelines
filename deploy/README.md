@@ -15,8 +15,6 @@ Building and deploying of the pipelines and components have been automated using
 1. Copy the sample dataset to a GCS location. The path to the location is provided as a build parameter.
 1. Deploy compiled pipelines to the KFP GKE cluster. The cluster name and location are provided as build parameters.
 
-You can start the build using the `gcloud builds submit` command 
-
 
 ### Build parameters
 You can use the `gcloud builds submit` command's `--substitutions` option to set the parameters of the build.
