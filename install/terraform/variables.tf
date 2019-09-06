@@ -32,5 +32,5 @@ variable "bucket_name" {
 
 variable "kfp_version" {
     description = "The version of Kubeflow Pipelines to install"
-    default     = "master"
+    default     = "0.1.27"
 }
