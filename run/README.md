@@ -73,15 +73,16 @@ Inspect `run_train.sh` and `run_batch_predict.sh` to see the examples of using `
 Make sure that you have configured the credentials to access your GKE cluster.
 ```
 gcloud container clusters get-credentials [YOUR_CLUSTER_NAME] --zone [CLUSTER_ZONE]
+```
 
 #### Installing Kubeflow Pipelines SDK
 
 To use `kfp.Client()` you need a Python 3.5+ environment with KFP SDK installed. It is highly recommended to install KFP SDK into a dedicated Python or Conda environment.
 
-The code in this tutorial was tested with the latest version of KFP SDK. 
+The code in this tutorial was tested with the 0.1.27 version of KFP SDK. 
 
 ```
-SDK_VERSION=0.1.23
+SDK_VERSION=0.1.27
 pip install https://storage.googleapis.com/ml-pipeline/release/$SDK_VERSION/kfp.tar.gz --upgrade
 
 To use `kfp-cli.py` utility you also need [Python Fire package](https://google.github.io/python-fire/guide/). 
