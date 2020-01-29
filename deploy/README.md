@@ -1,6 +1,6 @@
 
 
-## Building and deploying the solution
+## Building and deploying the pipelines
 
 Building and deploying of the pipelines and components have been automated using [GCP Cloud Build](https://cloud.google.com/cloud-build/docs/).  The build process goes through the following steps:
 1. Create a docker image to support custom build steps
