@@ -40,7 +40,7 @@ The `/cloud-build/build.sh` demonstrates how to use `gcloud builds submit` to st
 To build and deploy the solution:
 1. Open [Cloud Shell](https://cloud.google.com/shell/docs/) in your project.
 2. Clone this repo.
-3. Update `build.sh` with your argument values.
+3. Update `build.sh` with your argument values. Remember that the setup created both the GKE cluster and the GCS bucket. The GCS bucket's name is `gs://[YOUR_PROJECT_ID]-artifacts
 4. Execute `build.sh`.
 
 
