@@ -29,8 +29,6 @@ Parameter | Description
 project_id|Project ID of the GCP project you selected for the solution
 cluster_name| The name of the GKE cluster to create. 
 cluster_location | The zone for the cluster. Since AutoML only support` us-central1` it is recommended to create the cluster in one of the zones in the same region
-kfp_sa_id | The name of the service account to be used by Kubeflow Pipelines. 
-cluster_sa_id | The name of the service account that will be used by the GKE nodes in the default node pool.
 bucket_name | The name of the GCS bucket that will be used as an artifact storage. Terraform will attempt to create the bucket so make sure that the bucket under this name does not exist.
 
 
